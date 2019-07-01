@@ -1,0 +1,28 @@
+{
+  "name": "testes",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "repository": "https://github.com/prjThiago/testes.git",
+  "author": "Thiago Morais <thiagomorais@projetosthiago.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "pg": "^7.11.0",
+    "sequelize": "^5.9.0"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "sequelize-cli": "^5.5.0",
+    "sqlite3": "^4.0.9",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "NODE_ENV=test jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all",
+    "start": "node src/server.js",
+    "dev": "nodemon --ignore __tests__"
+  }
+}
